@@ -8,7 +8,6 @@
 		<artifactId>beneficios</artifactId>
 		<version>0.0.1</version>
 	</parent>
-	<groupId>com.redhat.latam.brms</groupId>
 	<artifactId>beneficios-model</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>beneficios</name>

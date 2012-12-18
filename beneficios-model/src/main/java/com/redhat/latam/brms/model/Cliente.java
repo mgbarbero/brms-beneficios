@@ -78,4 +78,9 @@ public class Cliente {
 		this.puntos = puntos;
 	}
 
+	public ObjectId getId() {
+
+		return this.id;
+	}
+	
 }

@@ -2,6 +2,8 @@ package com.redhat.latam.brms.repository;
 
 import java.net.UnknownHostException;
 
+import org.bson.types.ObjectId;
+
 import com.google.code.morphia.Datastore;
 import com.google.code.morphia.Morphia;
 import com.mongodb.Mongo;
@@ -46,6 +48,16 @@ public class Repository {
 	public <T> void truncate(Class<T> clazz) {
 
 		this.getDataStore().getCollection(clazz).drop();
+	}
+
+	public <T> T find(Class<T> clazz, String field, String value) {
+
+		return this.getDataStore().find(clazz).field(field).equal(value).get();
+	}
+
+	public <T> T find(Class<T> clazz, ObjectId id) {
+
+		return this.getDataStore().get(clazz, id);
 	}
 
 	/*

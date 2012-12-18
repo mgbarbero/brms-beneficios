@@ -2,6 +2,7 @@ package com.redhat.latam.brms;
 
 import static org.junit.Assert.*;
 
+import org.bson.types.ObjectId;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -36,10 +37,20 @@ public class RepositoryTest {
 	public void truncarLaBaseDeDatos() {
 
 		Cliente cliente = new Cliente();
-
 		repository.save(cliente);
 		repository.truncate(Cliente.class);
 		assertEquals(0, repository.size(Cliente.class));
+	}
+	
+	@Test
+	public void guardoUnClienteConValoresYLoBusco() {
+
+		Cliente cliente = new Cliente();
+		cliente.setBeneficioSms(100);
+		repository.truncate(Cliente.class);
+		repository.save(cliente);
+		ObjectId id = cliente.getId();
+		assertEquals(100, repository.find(Cliente.class,id).getBeneficioSms());
 	}
 
 }

@@ -6,13 +6,15 @@ import org.bson.types.ObjectId;
 
 import com.google.code.morphia.annotations.Entity;
 import com.google.code.morphia.annotations.Id;
+import com.google.code.morphia.annotations.Reference;
 
-@Entity
+@Entity("respuestas")
 public class Respuesta {
 
 	@Id
 	private ObjectId id;
 
+	@Reference
 	private Cliente cliente;
 	private Date fecha;
 

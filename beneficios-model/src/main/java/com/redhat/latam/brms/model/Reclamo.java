@@ -2,8 +2,19 @@ package com.redhat.latam.brms.model;
 
 import java.util.Date;
 
+import org.bson.types.ObjectId;
+
+import com.google.code.morphia.annotations.Entity;
+import com.google.code.morphia.annotations.Id;
+import com.google.code.morphia.annotations.Reference;
+
+@Entity("reclamos")
 public class Reclamo {
 
+	@Id
+	private ObjectId id;
+
+	@Reference
 	private Cliente cliente;
 	private Date fecha;
 

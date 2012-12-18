@@ -1,6 +1,15 @@
 package com.redhat.latam.brms.model;
 
+import org.bson.types.ObjectId;
+
+import com.google.code.morphia.annotations.Entity;
+import com.google.code.morphia.annotations.Id;
+
+@Entity("clientes")
 public class Cliente {
+
+	@Id
+	private ObjectId id;
 
 	private String tipoAbono;
 	private int beneficioSms;

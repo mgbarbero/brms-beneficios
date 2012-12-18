@@ -12,30 +12,35 @@ public class Cliente {
 	@Id
 	private ObjectId id;
 
+	private String nombre;
+
 	@Transient
 	private int beneficioSms;
 	@Transient
 	private int beneficioVoz;
 	@Transient
 	private int puntos;
-	
-	private String tipoAbono;
+
+	private String abono;
 	private int edad;
-	private String tipoContrato;
+	private String contrato;
+
+	private int sms;
+	private int voz;
 
 	public ObjectId getId() {
 
 		return this.id;
 	}
 
-	public String getTipoAbono() {
+	public String getAbono() {
 
-		return tipoAbono;
+		return abono;
 	}
 
-	public void setTipoAbono(String tipoAbono) {
+	public void setAbono(String tipoAbono) {
 
-		this.tipoAbono = tipoAbono;
+		this.abono = tipoAbono;
 	}
 
 	public int getBeneficioSms() {
@@ -68,14 +73,14 @@ public class Cliente {
 		this.edad = edad;
 	}
 
-	public String getTipoContrato() {
+	public String getContrato() {
 
-		return tipoContrato;
+		return contrato;
 	}
 
-	public void setTipoContrato(String tipoContrato) {
+	public void setContrato(String tipoContrato) {
 
-		this.tipoContrato = tipoContrato;
+		this.contrato = tipoContrato;
 	}
 
 	public int getPuntos() {
@@ -86,6 +91,36 @@ public class Cliente {
 	public void setPuntos(int puntos) {
 
 		this.puntos = puntos;
+	}
+
+	public String getNombre() {
+
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+
+		this.nombre = nombre;
+	}
+
+	public int getSms() {
+
+		return sms;
+	}
+
+	public void setSms(int sms) {
+
+		this.sms = sms;
+	}
+
+	public int getVoz() {
+
+		return voz;
+	}
+
+	public void setVoz(int voz) {
+
+		this.voz = voz;
 	}
 
 }

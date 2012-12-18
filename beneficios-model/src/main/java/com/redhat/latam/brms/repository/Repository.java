@@ -1,6 +1,7 @@
 package com.redhat.latam.brms.repository;
 
 import java.net.UnknownHostException;
+import java.util.List;
 
 import org.bson.types.ObjectId;
 
@@ -75,6 +76,11 @@ public class Repository {
 	public <T> T find(Class<T> clazz) {
 
 		return this.getDataStore().find(clazz).get();
+	}
+	
+	public <T> List<T> getAll(Class<T> clazz) {
+
+		return this.getDataStore().find(clazz).asList();
 	}
 
 	/*

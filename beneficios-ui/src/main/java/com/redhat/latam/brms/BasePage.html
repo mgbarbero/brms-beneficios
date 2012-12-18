@@ -2,7 +2,7 @@
 <html xmlns:wicket="http://wicket.apache.org">
 <head>
 <meta charset="utf-8" />
-<title>Apache Wicket Quickstart</title>
+<title>Red Hat Mobility</title>
 <link
 	href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:regular,bold'
 	rel='stylesheet' type='text/css' />
@@ -15,6 +15,8 @@
 <link rel="stylesheet" href="print.css" type="text/css" media="screen"
 	title="Stylesheet" />
 <link rel="stylesheet" href="menu.css" type="text/css" media="screen"
+	title="Stylesheet" />
+	<link rel="stylesheet" href="form.css" type="text/css" media="screen"
 	title="Stylesheet" />
 
 
@@ -69,7 +71,7 @@
 			</li>
 			<li class="blue">
 				<p>
-					<a href="#">Configuración</a>
+					<a wicket:id="configuracion" href="#">Configuración</a>
 				</p>
 				<p class="subtext">Paths, nombres, etc...</p>
 			</li>
@@ -82,7 +84,9 @@
 		</ul>
 	</div>
 
-	<div class="content"></div>
+	<div class="content">
+		<wicket:child />
+	</div>
 
 
 

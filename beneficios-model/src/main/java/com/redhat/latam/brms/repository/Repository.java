@@ -9,6 +9,7 @@ import com.google.code.morphia.Morphia;
 import com.mongodb.Mongo;
 import com.mongodb.MongoException;
 import com.redhat.latam.brms.model.Cliente;
+import com.redhat.latam.brms.model.Configuracion;
 import com.redhat.latam.brms.model.Reclamo;
 import com.redhat.latam.brms.model.Respuesta;
 
@@ -72,7 +73,7 @@ public class Repository {
 
 		Mongo mongo = this.getMongo();
 		Morphia morphia = new Morphia();
-		morphia.map(Respuesta.class).map(Cliente.class).map(Reclamo.class);
+		morphia.map(Respuesta.class).map(Cliente.class).map(Reclamo.class).map(Configuracion.class);
 
 		if ("development".toLowerCase().equals(scope.toLowerCase()))
 			return morphia.createDatastore(mongo, "beneficios_dev");

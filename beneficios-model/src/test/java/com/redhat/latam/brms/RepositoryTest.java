@@ -10,7 +10,10 @@ import com.redhat.latam.brms.model.Cliente;
 import com.redhat.latam.brms.repository.Repository;
 
 /**
- * Unit test for simple App.
+ * Bateria de tests para probar la persistencia
+ * 
+ * @author aparedes
+ * 
  */
 public class RepositoryTest {
 
@@ -41,7 +44,7 @@ public class RepositoryTest {
 		repository.truncate(Cliente.class);
 		assertEquals(0, repository.size(Cliente.class));
 	}
-	
+
 	@Test
 	public void guardoUnClienteConValoresYLoBusco() {
 
@@ -50,7 +53,7 @@ public class RepositoryTest {
 		repository.truncate(Cliente.class);
 		repository.save(cliente);
 		ObjectId id = cliente.getId();
-		assertEquals(100, repository.find(Cliente.class,id).getBeneficioSms());
+		assertEquals(100, repository.find(Cliente.class, id).getBeneficioSms());
 	}
 
 }

@@ -18,6 +18,11 @@ public class Cliente {
 	private String tipoContrato;
 	private int puntos;
 
+	public ObjectId getId() {
+
+		return this.id;
+	}
+
 	public String getTipoAbono() {
 
 		return tipoAbono;
@@ -78,9 +83,4 @@ public class Cliente {
 		this.puntos = puntos;
 	}
 
-	public ObjectId getId() {
-
-		return this.id;
-	}
-	
 }

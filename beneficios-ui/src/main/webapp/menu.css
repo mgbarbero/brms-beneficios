@@ -1,0 +1,52 @@
+.menu {
+	font-family: "Lucida Grande", arial, sans-serif;
+}
+
+.menu ul {
+	margin: 0;
+	padding: 0;
+}
+
+.menu li {
+	width: 100px;
+	height: 50px;
+	float: left;
+	color: #191919;
+	text-align: center;
+	overflow: hidden;
+}
+
+.menu a {
+	color: #FFF;
+	text-decoration: none;
+	
+}
+
+.menu p {
+	padding: 0px 2px;
+}
+
+.menu .subtext {
+	padding-top: 20px;
+}
+
+/*Menu Color Classes*/
+.green {
+	background: #6AA63B;
+}
+
+.yellow {
+	background: #FBC700;
+}
+
+.red {
+	background: #D52100;
+}
+
+.purple {
+	background: #5122B4;
+}
+
+.blue {
+	background: #0292C0;
+}

@@ -3,10 +3,12 @@ package com.redhat.latam.brms.home.clientes;
 import java.util.List;
 
 import org.apache.wicket.markup.html.basic.Label;
+import org.apache.wicket.markup.html.link.Link;
 import org.apache.wicket.markup.html.list.ListItem;
 import org.apache.wicket.markup.html.list.PropertyListView;
 
 import com.redhat.latam.brms.BasePage;
+import com.redhat.latam.brms.config.ConfigurationPage;
 import com.redhat.latam.brms.model.Cliente;
 import com.redhat.latam.brms.repository.Repository;
 
@@ -17,7 +19,24 @@ public class ClientesPage extends BasePage {
 	public ClientesPage() {
 
 		PropertyListView<Cliente> table = this.createTable();
+		Link<BasePage> nuevoLink = this.createNuevoLink();
 		add(table);
+		add(nuevoLink);
+	}
+
+	private Link<BasePage> createNuevoLink() {
+
+		Link<BasePage> link = new Link<BasePage>("nuevo") {
+
+			@Override
+			public void onClick() {
+
+				setResponsePage(ConfigurationPage.class);
+
+			}
+
+		};
+		return link;
 	}
 
 	public PropertyListView<Cliente> createTable() {

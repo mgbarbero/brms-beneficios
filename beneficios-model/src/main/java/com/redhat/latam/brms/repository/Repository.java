@@ -22,6 +22,17 @@ import com.redhat.latam.brms.model.Respuesta;
  */
 public class Repository {
 
+	private static final Repository instance = new Repository();
+
+	public static Repository getInstance() {
+
+		return instance;
+	}
+
+	/*
+	 * 
+	 */
+
 	private Datastore dataStore;
 
 	public Repository() {
@@ -59,6 +70,11 @@ public class Repository {
 	public <T> T find(Class<T> clazz, ObjectId id) {
 
 		return this.getDataStore().get(clazz, id);
+	}
+	
+	public <T> T find(Class<T> clazz) {
+
+		return this.getDataStore().find(clazz).get();
 	}
 
 	/*
@@ -109,5 +125,7 @@ public class Repository {
 
 		this.dataStore = dataStore;
 	}
+
+
 
 }

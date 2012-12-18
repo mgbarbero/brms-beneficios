@@ -4,6 +4,7 @@ import org.bson.types.ObjectId;
 
 import com.google.code.morphia.annotations.Entity;
 import com.google.code.morphia.annotations.Id;
+import com.google.code.morphia.annotations.Transient;
 
 @Entity("clientes")
 public class Cliente {
@@ -11,12 +12,16 @@ public class Cliente {
 	@Id
 	private ObjectId id;
 
-	private String tipoAbono;
+	@Transient
 	private int beneficioSms;
+	@Transient
 	private int beneficioVoz;
+	@Transient
+	private int puntos;
+	
+	private String tipoAbono;
 	private int edad;
 	private String tipoContrato;
-	private int puntos;
 
 	public ObjectId getId() {
 

@@ -74,6 +74,14 @@
 			<version>${jetty.version}</version>
 			<scope>provided</scope>
 		</dependency>
+
+
+		<!-- RED HAT DEPENDENCIES -->
+		<dependency>
+			<groupId>com.redhat.latam.brms</groupId>
+			<artifactId>beneficios-model</artifactId>
+		</dependency>
+
 	</dependencies>
 	<build>
 		<resources>

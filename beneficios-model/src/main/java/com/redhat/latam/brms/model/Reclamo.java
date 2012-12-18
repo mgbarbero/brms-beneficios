@@ -17,6 +17,8 @@ public class Reclamo {
 	@Reference
 	private Cliente cliente;
 	private Date fecha;
+	private String tipoDeReclamo;
+	private String comentario;
 
 	public Cliente getCliente() {
 
@@ -36,5 +38,25 @@ public class Reclamo {
 	public void setFecha(Date fecha) {
 
 		this.fecha = fecha;
+	}
+
+	public String getTipoDeReclamo() {
+
+		return tipoDeReclamo;
+	}
+
+	public void setTipoDeReclamo(String tipoDeReclamo) {
+
+		this.tipoDeReclamo = tipoDeReclamo;
+	}
+
+	public String getComentario() {
+
+		return comentario;
+	}
+
+	public void setComentario(String comentario) {
+
+		this.comentario = comentario;
 	}
 }

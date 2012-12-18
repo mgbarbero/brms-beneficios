@@ -9,6 +9,7 @@ import org.apache.wicket.markup.html.list.PropertyListView;
 
 import com.redhat.latam.brms.BasePage;
 import com.redhat.latam.brms.config.ConfigurationPage;
+import com.redhat.latam.brms.home.clientes.nuevo.NuevoClientePage;
 import com.redhat.latam.brms.model.Cliente;
 import com.redhat.latam.brms.repository.Repository;
 
@@ -31,7 +32,7 @@ public class ClientesPage extends BasePage {
 			@Override
 			public void onClick() {
 
-				setResponsePage(ConfigurationPage.class);
+				setResponsePage(NuevoClientePage.class);
 
 			}
 

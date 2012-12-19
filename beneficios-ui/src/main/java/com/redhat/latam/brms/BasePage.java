@@ -1,5 +1,6 @@
 package com.redhat.latam.brms;
 
+import org.apache.wicket.Session;
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.link.BookmarkablePageLink;
@@ -27,4 +28,11 @@ public abstract class BasePage extends WebPage {
 		else return cliente.getNombre();
 
 	}
+
+	@Override
+	public Session getSession() {
+
+		return (BeneficiosSession) super.getSession();
+	}
+
 }

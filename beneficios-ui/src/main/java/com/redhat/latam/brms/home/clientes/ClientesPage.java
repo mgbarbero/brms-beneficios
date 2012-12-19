@@ -8,6 +8,7 @@ import org.apache.wicket.markup.html.list.ListItem;
 import org.apache.wicket.markup.html.list.PropertyListView;
 
 import com.redhat.latam.brms.BasePage;
+import com.redhat.latam.brms.BeneficiosSession;
 import com.redhat.latam.brms.config.ConfigurationPage;
 import com.redhat.latam.brms.home.clientes.nuevo.NuevoClientePage;
 import com.redhat.latam.brms.model.Cliente;
@@ -53,6 +54,19 @@ public class ClientesPage extends BasePage {
 		};
 	}
 
+	private Link<BasePage> createLoginLink(final Cliente cliente) {
+
+		return new Link<BasePage>("login") {
+
+			@Override
+			public void onClick() {
+
+				((BeneficiosSession) getSession()).setCliente(cliente);
+				setResponsePage(ClientesPage.class);
+			}
+		};
+	}
+
 	public PropertyListView<Cliente> createTable() {
 
 		List<Cliente> clientes = Repository.getInstance().getAll(Cliente.class);
@@ -70,7 +84,7 @@ public class ClientesPage extends BasePage {
 				item.add(new Label("voz"));
 				item.add(new Label("puntos"));
 				item.add(createDeleteAction(item.getModelObject()));
-
+				item.add(createLoginLink(item.getModelObject()));
 			}
 		};
 

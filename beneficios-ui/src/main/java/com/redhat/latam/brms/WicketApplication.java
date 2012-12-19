@@ -1,7 +1,10 @@
 package com.redhat.latam.brms;
 
+import org.apache.wicket.Session;
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.protocol.http.WebApplication;
+import org.apache.wicket.request.Request;
+import org.apache.wicket.request.Response;
 
 import com.redhat.latam.brms.home.HomePage;
 
@@ -34,5 +37,11 @@ public class WicketApplication extends WebApplication
 		super.init();
 
 		// add your configuration here
+	}
+
+	@Override
+	public Session newSession(Request request, Response response) {
+
+		return new BeneficiosSession(request);
 	}
 }

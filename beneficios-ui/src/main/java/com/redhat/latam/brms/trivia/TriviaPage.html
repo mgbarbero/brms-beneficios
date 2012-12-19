@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</head>
+<body>
+
+	<div>
+		<wicket:extend>
+
+			<div id="stylized" class="myform">
+				<form wicket:id="form" id="form" name="form" method="post"
+					action="index.html">
+					<h1>Trivia!!</h1>
+					<p>Contesta esta trivia y llevate un premio de regalo!</p>
+
+					<label>Pregunta 1<span class="small">¿Cuál es tu
+							distribución de linux favorita?</span>
+					</label> <select name="nombre" id="nombre"><option value="null"></option>
+						<option value="rhel">RHEL 6.3</option>
+						<option value="fedora">Fedora 17</option>
+						<option value="Mandriva">Mandriva</option>
+						<option value="Ubuntu">Ubuntu</option></select> <label>Pregunta 2<span
+						class="small">¿Cual juego de futbol preferis?</span>
+					</label><select name="nombre" id="nombre">
+						<option value="null"></option>
+						<option value="Fifa 13">Fifa 13</option>
+						<option value="PES 2013">PES 2013</option>
+					</select>
+
+					<button type="submit">Enviar</button>
+					<div class="spacer"></div>
+				</form>
+
+			</div>
+		</wicket:extend>
+	</div>
+
+</body>
+</html>

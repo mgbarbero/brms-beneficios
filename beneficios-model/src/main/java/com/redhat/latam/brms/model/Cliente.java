@@ -18,9 +18,8 @@ public class Cliente {
 	private int beneficioSms;
 	@Transient
 	private int beneficioVoz;
-	@Transient
-	private int puntos;
 
+	private int puntos;
 	private String abono;
 	private int edad;
 	private String contrato;

@@ -40,6 +40,19 @@ public class ClientesPage extends BasePage {
 		return link;
 	}
 
+	private Link<BasePage> createDeleteAction(final Cliente cliente) {
+
+		return new Link<BasePage>("delete") {
+
+			@Override
+			public void onClick() {
+
+				Repository.getInstance().delete(cliente);
+				setResponsePage(ClientesPage.class);
+			}
+		};
+	}
+
 	public PropertyListView<Cliente> createTable() {
 
 		List<Cliente> clientes = Repository.getInstance().getAll(Cliente.class);
@@ -56,6 +69,7 @@ public class ClientesPage extends BasePage {
 				item.add(new Label("sms"));
 				item.add(new Label("voz"));
 				item.add(new Label("puntos"));
+				item.add(createDeleteAction(item.getModelObject()));
 
 			}
 		};

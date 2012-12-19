@@ -72,12 +72,12 @@ public class Repository {
 
 		return this.getDataStore().get(clazz, id);
 	}
-	
+
 	public <T> T find(Class<T> clazz) {
 
 		return this.getDataStore().find(clazz).get();
 	}
-	
+
 	public <T> List<T> getAll(Class<T> clazz) {
 
 		return this.getDataStore().find(clazz).asList();
@@ -132,6 +132,9 @@ public class Repository {
 		this.dataStore = dataStore;
 	}
 
+	public void delete(Cliente cliente) {
 
+		this.getDataStore().delete(cliente);
+	}
 
 }

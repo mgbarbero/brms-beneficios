@@ -67,6 +67,21 @@ public class ClientesPage extends BasePage {
 		};
 	}
 
+	private Link<BasePage> createLogoutLink(final Cliente cliente) {
+
+		return new Link<BasePage>("logout") {
+
+			@Override
+			public void onClick() {
+
+				BeneficiosSession session = (BeneficiosSession) getSession();
+				if (cliente.equals(session.getCliente())) session.setCliente(null);
+				else throw new RuntimeException("El cliente no esta loggeado");
+				setResponsePage(ClientesPage.class);
+			}
+		};
+	}
+
 	public PropertyListView<Cliente> createTable() {
 
 		List<Cliente> clientes = Repository.getInstance().getAll(Cliente.class);
@@ -85,6 +100,7 @@ public class ClientesPage extends BasePage {
 				item.add(new Label("puntos"));
 				item.add(createDeleteAction(item.getModelObject()));
 				item.add(createLoginLink(item.getModelObject()));
+				item.add(createLogoutLink(item.getModelObject()));
 			}
 		};
 

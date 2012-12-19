@@ -122,4 +122,11 @@ public class Cliente {
 		this.voz = voz;
 	}
 
+	@Override
+	public boolean equals(Object obj) {
+
+		Cliente cliente = (Cliente) obj;
+		return this.getId().equals(cliente.getId());
+	}
+
 }

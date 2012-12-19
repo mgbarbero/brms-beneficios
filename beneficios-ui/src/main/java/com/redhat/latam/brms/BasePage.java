@@ -8,6 +8,7 @@ import org.apache.wicket.markup.html.link.BookmarkablePageLink;
 import com.redhat.latam.brms.config.ConfigurationPage;
 import com.redhat.latam.brms.home.clientes.ClientesPage;
 import com.redhat.latam.brms.model.Cliente;
+import com.redhat.latam.brms.reclamo.ReclamoPage;
 import com.redhat.latam.brms.trivia.TriviaPage;
 
 public abstract class BasePage extends WebPage {
@@ -20,6 +21,7 @@ public abstract class BasePage extends WebPage {
 		add(new BookmarkablePageLink<WebPage>("configuracion", ConfigurationPage.class));
 		add(new BookmarkablePageLink<WebPage>("clientes", ClientesPage.class));
 		add(new BookmarkablePageLink<WebPage>("trivia", TriviaPage.class));
+		add(new BookmarkablePageLink<WebPage>("reclamos", ReclamoPage.class));
 
 	}
 

@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</head>
+<body>
+
+	<div>
+		<wicket:extend>
+
+			<div id="stylized" class="myform">
+				<form wicket:id="form" id="form" name="form" method="post"
+					action="index.html">
+					<h1>Reclamo</h1>
+					<p>Contesta esta trivia y llevate un premio de regalo!</p>
+
+					<label>Tipo de Reclamo
+						<span class="small">Seleccione del combo</span>
+					</label> 
+					<select name="tipo" id="tipo">
+						<option value="null"></option>
+						<option value="rhel">Falta de Servicio</option>
+						<option value="fedora">Mala atención</option>
+					</select> 
+					
+					<label>Contenido
+						<span class="small">Escriba aqui su	mensaje</span>
+					</label>
+					<textarea name="contenido" id="contenido" cols="25" rows="5"></textarea>
+
+					<button type="submit">Enviar</button>
+					<div class="spacer"></div>
+				</form>
+
+			</div>
+		</wicket:extend>
+	</div>
+
+</body>
+</html>

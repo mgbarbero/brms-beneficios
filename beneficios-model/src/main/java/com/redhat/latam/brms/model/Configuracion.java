@@ -11,7 +11,7 @@ public class Configuracion {
 	@Id
 	private ObjectId id;
 
-	private int refreshTime;
+	private String refreshTime;
 	private String changeSet;
 
 	public ObjectId getId() {
@@ -19,12 +19,12 @@ public class Configuracion {
 		return this.id;
 	}
 
-	public int getRefreshTime() {
+	public String getRefreshTime() {
 
 		return refreshTime;
 	}
 
-	public void setRefreshTime(int refreshTime) {
+	public void setRefreshTime(String refreshTime) {
 
 		this.refreshTime = refreshTime;
 	}

@@ -4,6 +4,10 @@ import org.apache.wicket.markup.html.form.Form;
 import org.apache.wicket.markup.html.form.RequiredTextField;
 import org.apache.wicket.model.CompoundPropertyModel;
 
+import com.redhat.claro.engine.config.Configuration;
+import com.redhat.claro.engine.domain.RulesChangeSet;
+import com.redhat.claro.engine.domain.RulesEngine;
+import com.redhat.claro.engine.domain.RulesEngineFactory;
 import com.redhat.latam.brms.BasePage;
 import com.redhat.latam.brms.home.HomePage;
 import com.redhat.latam.brms.model.Configuracion;
@@ -30,11 +34,15 @@ public class ConfigurationPage extends BasePage {
 
 				Configuracion config = this.getModelObject();
 				Repository.getInstance().save(config);
+
+				Configuration.instance().put("drools.resource.scanner.interval", config.getRefreshTime());
+				Configuration.instance().put("changeset", config.getChangeSet());
+
 				setResponsePage(HomePage.class);
 			}
 		};
 
-		form.add(new RequiredTextField<Integer>("refreshTime"));
+		form.add(new RequiredTextField<String>("refreshTime"));
 		form.add(new RequiredTextField<String>("changeSet"));
 		return form;
 

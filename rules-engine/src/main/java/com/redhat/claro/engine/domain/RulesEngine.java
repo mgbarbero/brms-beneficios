@@ -131,8 +131,8 @@ public class RulesEngine {
 	protected KnowledgeAgentConfiguration getConfiguration() {
 
 		KnowledgeAgentConfiguration conf = KnowledgeAgentFactory.newKnowledgeAgentConfiguration();
-		conf.setProperty("drools.resource.scanner.interval", Configuration.instance().getString("drools.resource.scanner.interval"));
-		logger.info("Refresh Time: " + Configuration.instance().getString("drools.resource.scanner.interval"));
+		conf.setProperty("drools.resource.scanner.interval", Configuration.instance().get("drools.resource.scanner.interval"));
+		logger.info("Refresh Time: " + Configuration.instance().get("drools.resource.scanner.interval"));
 
 		return conf;
 	}

@@ -1,28 +1,30 @@
 package com.redhat.claro.engine.config;
 
-import java.io.File;
+import java.util.HashMap;
+import java.util.Map;
 
-import org.apache.commons.configuration.ConfigurationException;
-import org.apache.commons.configuration.PropertiesConfiguration;
 import org.apache.log4j.Logger;
 
-public final class Configuration {
+public final class Configuration extends HashMap<String, String> {
 
-	private static org.apache.commons.configuration.Configuration config;
+	private static final long serialVersionUID = -7425339074031363161L;
+	private static Configuration config;
 	private static Logger logger = Logger.getLogger(Configuration.class);
 
-	public static org.apache.commons.configuration.Configuration instance() {
+	public static Configuration instance() {
 
-		if (config == null) {
-			try {
-				File file = new File(System.getProperty("property.file"));
-				config = new PropertiesConfiguration(file);
-			} catch (ConfigurationException e) {
-				logger.error(e);
-			}
-		}
+		if (config == null) config = new Configuration();
 		return config;
 	}
+
+	/*
+	 * 
+	 * 
+	 * 
+	 * 
+	 * 
+	 * 
+	 */
 
 	private Configuration() {
 

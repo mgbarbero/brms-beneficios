@@ -30,7 +30,7 @@ public class RulesChangeSet{
 
 	public String getFileName() {
 
-		return Configuration.instance().getProperty(this.property).toString();
+		return Configuration.instance().get(this.property);
 	}
 
 

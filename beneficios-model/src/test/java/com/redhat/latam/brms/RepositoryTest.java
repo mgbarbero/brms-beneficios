@@ -48,12 +48,12 @@ public class RepositoryTest {
 	@Test
 	public void guardoUnClienteConValoresYLoBusco() {
 
-		Cliente cliente = new Cliente();
-		cliente.setBeneficioSms(100);
 		repository.truncate(Cliente.class);
+		Cliente cliente = new Cliente();
+		cliente.setSms(100);
 		repository.save(cliente);
 		ObjectId id = cliente.getId();
-		assertEquals(100, repository.find(Cliente.class, id).getBeneficioSms());
+		assertEquals(100, repository.find(Cliente.class, id).getSms());
 	}
 
 }

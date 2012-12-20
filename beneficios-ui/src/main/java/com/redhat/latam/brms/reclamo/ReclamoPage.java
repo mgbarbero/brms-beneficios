@@ -13,6 +13,15 @@ public class ReclamoPage extends BasePage {
 
 		Form<Cliente> form = new Form<Cliente>("form") {
 
+			@Override
+			protected void onSubmit() {
+
+				super.onSubmit();
+				
+				
+				
+				
+			}
 		};
 
 		add(form);

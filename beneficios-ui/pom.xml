@@ -134,6 +134,13 @@
 				<groupId>org.jboss.as.plugins</groupId>
 				<artifactId>jboss-as-maven-plugin</artifactId>
 				<version>7.3.Final</version>
+				<configuration>
+					<domain>
+						<server-groups>
+							<server-group>group-app</server-group>
+						</server-groups>
+					</domain>
+				</configuration>
 			</plugin>
 
 

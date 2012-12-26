@@ -14,7 +14,7 @@ public class AboutPage extends BasePage {
 
 		add(new TextField<String>("refresh", new Model<String>(Configuration.instance().get("drools.resource.scanner.interval"))));
 		add(new TextField<String>("usuario", new Model<String>(this.getNombreCliente())));
-		add(new TextField<String>("changeset", new Model<String>(Configuration.instance().get("changeSet"))));
+		add(new TextField<String>("changeset", new Model<String>(Configuration.instance().get("changeset"))));
 
 	}
 

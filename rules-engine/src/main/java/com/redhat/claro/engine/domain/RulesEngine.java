@@ -89,7 +89,7 @@ public class RulesEngine {
 		this.changeSet = fileName;
 	}
 
-	protected StatelessKnowledgeSession getSession() {
+	public StatelessKnowledgeSession getSession() {
 
 		StatelessKnowledgeSession session = this.getAgent().newStatelessKnowledgeSession();
 		session.addEventListener(new RedHatWorkingMemoryListener());
@@ -105,7 +105,7 @@ public class RulesEngine {
 	 * 
 	 * @return
 	 */
-	protected KnowledgeAgent getAgent() {
+	public KnowledgeAgent getAgent() {
 
 		if (this.agent == null) {
 

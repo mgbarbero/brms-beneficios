@@ -9,23 +9,22 @@
 		<wicket:extend>
 
 			<div id="stylized" class="myform">
-				<form id="form" name="form" method="post" action="index.html">
+				<form id="form" name="form">
 					<h1>About</h1>
 					<p>Info del sistema</p>
 
 					<label>Usuario<span class="small">El que esta
 							logeado actualmente</span>
-					</label> <input type="text" name="usuario" id="usuario" wicket:id="usuario" />
+					</label> <input type="text" disabled="disabled" name="usuario" id="usuario"
+						wicket:id="usuario" /> <label>Tiempo de Refresco<span
+						class="small">En segundos de las reglas de negocio</span>
+					</label> <input type="text" disabled="disabled" name="refresh" id="refresh"
+						wicket:id="refresh" /> <label>ChangeSet<span
+						class="small">Path en el FileSystem</span>
+					</label> <input type="text" disabled="disabled" name="changeset"
+						id="changeset" wicket:id="changeset" />
 
-					<label>Tiempo de Refresco<span class="small">En
-							segundos de las reglas de negocio</span>
-					</label> <input type="text" name="refresh" id="refresh" wicket:id="refresh" />
-
-					<label>ChangeSet<span class="small">Path en el
-							FileSystem</span>
-					</label> <input type="text" name="changeset" id="changeset"
-						wicket:id="changeset" />
-
+					<button type="submit">Ok</button>
 					<div class="spacer"></div>
 
 				</form>

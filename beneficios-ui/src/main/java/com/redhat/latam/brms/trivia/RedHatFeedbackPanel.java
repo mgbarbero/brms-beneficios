@@ -23,5 +23,9 @@ public class RedHatFeedbackPanel extends FeedbackPanel {
 
 		else return "alert unstyled ";
 	}
+	
+	
+	
+	
 
 }

@@ -23,12 +23,14 @@ public class TriviaPage extends BasePage {
 
 		Form<Respuesta> form = new Form<Respuesta>("form") {
 
+			private static final long serialVersionUID = -6422588711600178471L;
+
 			protected void onSubmit() {
 
 				// ACA SE EJECUTA EL MOTOR DE REGLAS
 				System.out.println("aca se ejecuta el motor");
-				RulesEngine engine = RulesEngineFactory.getEngine(new RulesChangeSet("beneficios", getChangeset()));
-				engine.setChangeSet(getChangeset());
+				RulesEngine engine = new RulesEngine("beneficios", getChangeset());
+//				engine.setChangeSet(getChangeset());
 
 				KnowledgeBase kbase = engine.getAgent().getKnowledgeBase();
 				System.out.println(kbase.getKnowledgePackages().size());

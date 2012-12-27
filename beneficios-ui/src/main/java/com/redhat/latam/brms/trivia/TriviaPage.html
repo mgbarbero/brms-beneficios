@@ -8,31 +8,62 @@
 	<div>
 		<wicket:extend>
 
-			<div id="stylized" class="myform">
+			<div class="container">
 				<form wicket:id="form" id="form" name="form" method="post"
-					action="index.html">
-					<h1>Trivia!!</h1>
-					<p>Contesta esta trivia y llevate un premio de regalo!</p>
+					class="form-horizontal">
+					<fieldset>
 
-					<label>Pregunta 1<span class="small">¿Cuál es tu
-							distribución de linux favorita?</span>
-					</label> <select name="nombre" id="nombre"><option value="null"></option>
-						<option value="rhel">RHEL 6.3</option>
-						<option value="fedora">Fedora 17</option>
-						<option value="Mandriva">Mandriva</option>
-						<option value="Ubuntu">Ubuntu</option></select> <label>Pregunta 2<span
-						class="small">¿Cual juego de futbol preferis?</span>
-					</label><select name="nombre" id="nombre">
-						<option value="null"></option>
-						<option value="Fifa 13">Fifa 13</option>
-						<option value="PES 2013">PES 2013</option>
-					</select>
+						<legend>
+							<h2>Trivia!</h2>
+						</legend>
 
-					<button type="submit">Enviar</button>
-					<div class="spacer"></div>
+						<div class="control-group">
+							<label class="control-label" for="inputEmail">¿Cuál es tu
+								distribución de linux favorita?</label>
+							<div class="controls">
+								<input type="text" id="inputEmail">
+							</div>
+						</div>
+
+						<div class="control-group">
+							<label class="control-label" for="inputEmail">¿Cuál es tu
+								distribución de linux favorita?</label>
+							<div class="controls">
+								<select name="nombre" id="nombre">
+									<option value="null"></option>
+									<option value="rhel">RHEL 6.3</option>
+									<option value="fedora">Fedora 17</option>
+									<option value="Mandriva">Mandriva</option>
+									<option value="Ubuntu">Ubuntu</option>
+								</select>
+							</div>
+						</div>
+
+						<div class="control-group">
+							<label class="control-label" for="inputEmail">¿Cuál es tu
+								distribución de linux favorita?</label>
+							<div class="controls">
+								<select name="nombre" id="nombre">
+									<option value="null"></option>
+									<option value="Fifa 13">Fifa 13</option>
+									<option value="PES 2013">PES 2013</option>
+								</select>
+							</div>
+						</div>
+						<div class="control-group">
+							<button type="submit" class="btn">Enviar</button>
+						</div>
+					</fieldset>
 				</form>
 
 			</div>
+
+			<div class="alert">
+				<button type="button" class="close" data-dismiss="alert">&times;</button>
+				<strong>Warning!</strong> Best check yo self, you're not looking too
+				good.
+			</div>
+
 		</wicket:extend>
 	</div>
 

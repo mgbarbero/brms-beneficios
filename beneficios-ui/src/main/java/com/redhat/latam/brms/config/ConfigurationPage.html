@@ -7,25 +7,44 @@
 <body>
 
 	<wicket:extend>
-		<div id="stylized" class="myform">
+		<div class="container">
+
+
+
 			<form wicket:id="form" id="form" name="form" method="post"
-				action="index.html">
-				<h1>Configuración</h1>
-				<p>Desde acá se puede configurar los parámetros basicos del
-					motor de reglas</p>
+				class="form-horizontal">
+				<fieldset>
 
-				<label>Refresh Time <span class="small">Tiempo en
-						Segundos para el refresco de las reglas</span>
-				</label> <input type="text" name="refreshTime" id="refreshTime"
-					wicket:id="refreshTime" /> <label>Changeset Path <span
-					class="small">Ruta absoluta al changeset</span>
-				</label> <input type="text" name="changeSet" id="changeSet"
-					wicket:id="changeSet" />
+					<legend>
+						<h2>Configuración</h2>
+					</legend>
 
-				<button type="submit">Guardar</button>
-				<div class="spacer"></div>
+					<div class="control-group">
+						<label class="control-label" for="inputEmail">Refresh Time
+							(en seg.)</label>
+						<div class="controls">
+							<input type="text" name="refreshTime" id="refreshTime"
+								wicket:id="refreshTime" />
+						</div>
+					</div>
 
+					<div class="control-group">
+						<label class="control-label" for="inputEmail">Changeset
+							(Ruta)</label>
+						<div class="controls">
+							<input type="text" name="changeSet" id="changeSet"
+								wicket:id="changeSet" />
+						</div>
+					</div>
+					<div class="control-group">
+						<button type="submit" class="btn">Enviar</button>
+					</div>
+				</fieldset>
 			</form>
+
+
+
+
 		</div>
 	</wicket:extend>
 </body>

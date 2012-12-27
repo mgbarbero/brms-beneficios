@@ -8,29 +8,42 @@
 	<div>
 		<wicket:extend>
 
-			<div id="stylized" class="myform">
+			<div id="stylized" class="container">
+
+
 				<form wicket:id="form" id="form" name="form" method="post"
-					action="index.html">
-					<h1>Reclamo</h1>
-					<p>Contesta esta trivia y llevate un premio de regalo!</p>
+					class="form-horizontal">
+					<fieldset>
 
-					<label>Tipo de Reclamo
-						<span class="small">Seleccione del combo</span>
-					</label> 
-					<select name="tipo" id="tipo">
-						<option value="null"></option>
-						<option value="rhel">Falta de Servicio</option>
-						<option value="fedora">Mala atención</option>
-					</select> 
-					
-					<label>Contenido
-						<span class="small">Escriba aqui su	mensaje</span>
-					</label>
-					<textarea name="contenido" id="contenido" cols="25" rows="5"></textarea>
+						<legend>
+							<h2>Reclamo</h2>
+						</legend>
 
-					<button type="submit">Enviar</button>
-					<div class="spacer"></div>
+						<div class="control-group">
+							<label class="control-label" for="inputEmail">Tipo de
+								Reclamo</label>
+							<div class="controls">
+								<select name="tipo" id="tipo">
+									<option value="null"></option>
+									<option value="rhel">Falta de Servicio</option>
+									<option value="fedora">Mala atención</option>
+								</select>
+							</div>
+						</div>
+
+						<div class="control-group">
+							<label class="control-label" for="inputEmail">Contenido</label>
+							<div class="controls">
+								<textarea name="contenido" id="contenido" cols="25" rows="5"></textarea>
+							</div>
+						</div>
+						<div class="control-group">
+							<button type="submit" class="btn">Enviar</button>
+						</div>
+					</fieldset>
 				</form>
+
+
 
 			</div>
 		</wicket:extend>

@@ -8,26 +8,51 @@
 	<div>
 		<wicket:extend>
 
-			<div id="stylized" class="myform">
-				<form id="form" name="form">
-					<h1>About</h1>
-					<p>Info del sistema</p>
+			<div class="container">
 
-					<label>Usuario<span class="small">El que esta
-							logeado actualmente</span>
-					</label> <input type="text" disabled="disabled" name="usuario" id="usuario"
-						wicket:id="usuario" /> <label>Tiempo de Refresco<span
-						class="small">En segundos de las reglas de negocio</span>
-					</label> <input type="text" disabled="disabled" name="refresh" id="refresh"
-						wicket:id="refresh" /> <label>ChangeSet<span
-						class="small">Path en el FileSystem</span>
-					</label> <input type="text" disabled="disabled" name="changeset"
-						id="changeset" wicket:id="changeset" />
 
-					<button type="submit">Ok</button>
-					<div class="spacer"></div>
 
+
+				<form id="form" name="form" method="post"
+					class="form-horizontal">
+					<fieldset>
+
+						<legend>
+							<h2>Configuración</h2>
+						</legend>
+
+						<div class="control-group">
+							<label class="control-label" for="inputEmail">Usuario</label>
+							<div class="controls">
+								<input type="text" disabled="disabled" name="usuario"
+									id="usuario" wicket:id="usuario" />
+							</div>
+						</div>
+
+						<div class="control-group">
+							<label class="control-label" for="inputEmail">Refresh
+								Time (en seg.)</label>
+							<div class="controls">
+								<input type="text" disabled="disabled" name="refresh"
+									id="refresh" wicket:id="refresh" />
+							</div>
+						</div>
+
+						<div class="control-group">
+							<label class="control-label" for="inputEmail">Changeset
+								(Ruta)</label>
+							<div class="controls">
+								<input type="text" disabled="disabled" name="changeset"
+									id="changeset" wicket:id="changeset" />
+							</div>
+						</div>
+						<div class="control-group">
+							<button type="submit" class="btn">Ok</button>
+						</div>
+					</fieldset>
 				</form>
+
+
 			</div>
 
 

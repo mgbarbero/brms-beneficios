@@ -1,76 +1,26 @@
 package com.redhat.latam.brms.trivia;
 
-import java.util.Arrays;
-import java.util.Date;
-
+import org.apache.wicket.AttributeModifier;
 import org.apache.wicket.markup.html.form.Form;
-import org.drools.KnowledgeBase;
-import org.drools.definition.type.FactType;
+import org.apache.wicket.markup.html.form.TextField;
+import org.apache.wicket.markup.html.panel.FeedbackPanel;
+import org.apache.wicket.model.Model;
 
-import com.redhat.claro.engine.config.Configuration;
-import com.redhat.claro.engine.domain.RulesChangeSet;
-import com.redhat.claro.engine.domain.RulesEngine;
-import com.redhat.claro.engine.domain.RulesEngineFactory;
 import com.redhat.latam.brms.BasePage;
-import com.redhat.latam.brms.model.Configuracion;
 import com.redhat.latam.brms.model.Respuesta;
 
 public class TriviaPage extends BasePage {
 
 	private static final long serialVersionUID = -4367627401630576797L;
+	private String pregunta = "";
 
 	public TriviaPage() {
 
-		Form<Respuesta> form = new Form<Respuesta>("form") {
-
-			private static final long serialVersionUID = -6422588711600178471L;
-
-			protected void onSubmit() {
-
-				// ACA SE EJECUTA EL MOTOR DE REGLAS
-				System.out.println("aca se ejecuta el motor");
-				RulesEngine engine = new RulesEngine("beneficios", getChangeset());
-//				engine.setChangeSet(getChangeset());
-
-				KnowledgeBase kbase = engine.getAgent().getKnowledgeBase();
-				System.out.println(kbase.getKnowledgePackages().size());
-				FactType triviaType = kbase.getFactType("beneficios_marketing", "Respuesta_trivia_mkt");
-				FactType clienteType = kbase.getFactType("beneficios_marketing", "Cliente_mkt");
-
-				try {
-					Object trivia = triviaType.newInstance();
-					Object cliente = clienteType.newInstance();
-
-					clienteType.set(cliente, "tipo_abono", getCliente().getAbono());
-					clienteType.set(cliente, "beneficio_sms", getCliente().getBeneficioSms());
-					clienteType.set(cliente, "beneficio_voz", getCliente().getBeneficioVoz());
-					clienteType.set(cliente, "edad", getCliente().getEdad());
-					clienteType.set(cliente, "tipo_contrato", getCliente().getContrato());
-					clienteType.set(cliente, "puntos", getCliente().getPuntos());
-
-					triviaType.set(trivia, "cliente", cliente);
-					triviaType.set(trivia, "fecha_respuesta", new Date());
-
-					engine.execute(Arrays.asList(trivia, cliente));
-
-				} catch (InstantiationException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				} catch (IllegalAccessException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-
-			private String getChangeset() {
-
-				return Configuration.instance().get("changeset");
-			}
-
-		};
-
+		Form<Respuesta> form = new AjaxForm("form", getCliente());
+		form.add(new TextField<String>("pregunta", new Model<String>(this.pregunta)));
+		FeedbackPanel feedback = new RedHatFeedbackPanel("feedback");
+		add(feedback);
 		add(form);
+
 	}
 }

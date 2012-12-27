@@ -9,38 +9,77 @@
 		<wicket:panel>
 
 
-			<div id="stylized" class="myform">
-				<form wicket:id="form" id="form" name="form" method="post"
-					action="index.html">
-					<h1>Cliente Nuevo</h1>
-					<p>Se preconfigura un cliente</p>
+			<div class="container">
+				<form wicket:id="form" class="form-horizontal">
 
-					<label>Nombre<span class="small">Nonmbre</span>
-					</label> <input type="text" name="nombre" id="nombre" wicket:id="nombre"/> 
-					
-					<label>Tipo de Abono<span class="small">Tipo de abono</span>
-					</label> <input type="text" name="abono" id="abono" wicket:id="abono"/>
-					
-					<label>Tipo de Contrato<span class="small">Tipo de Contrato</span>
-					</label> <input type="text" name="contrato" id="contrato" wicket:id="contrato"/>
-					
-					<label>Edad<span class="small">Edad</span>
-					</label> <input type="text" name="edad" id="edad" wicket:id="edad"/>
-					
-					<label>Cantidad de SMS<span class="small">Cantidad de SMS</span>
-					</label> <input type="text" name="sms" id="sms" wicket:id="sms"/>
-					
-					<label>Minutos de Voz<span class="small">Minutos de Voz</span>
-					</label> <input type="text" name="voz" id="voz" wicket:id="voz"/>
-					
-					<label>Puntos<span class="small">Puntos</span>
-					</label> <input type="text" name="puntos" id="puntos" wicket:id="puntos"/>
+					<fieldset>
+
+						<legend>Cliente Nuevo</legend>
 
 
+						<div class="control-group">
+							<label class="control-label">Nombre</label>
+							<div class="controls">
+								<input type="text" name="nombre" id="nombre" wicket:id="nombre" />
+							</div>
+						</div>
 
-					<button type="submit">Guardar</button>
-					<div class="spacer"></div>
+						<div class="control-group">
+							<label class="control-label">Tipo de Abono</label>
+							<div class="controls">
+								<input type="text" name="abono" id="abono" wicket:id="abono" />
+							</div>
+						</div>
 
+
+						<div class="control-group">
+							<label class="control-label">Tipo de Contrato</label>
+							<div class="controls">
+								<input type="text" name="contrato" id="contrato"
+									wicket:id="contrato" />
+							</div>
+						</div>
+
+
+						<div class="control-group">
+							<label class="control-label">Edad</label>
+							<div class="controls">
+								<input type="text" name="edad" id="edad" wicket:id="edad" />
+							</div>
+						</div>
+
+
+						<div class="control-group">
+							<label class="control-label">Cantidad de SMS</label>
+							<div class="controls">
+								<input type="text" name="sms" id="sms" wicket:id="sms" />
+							</div>
+						</div>
+
+
+						<div class="control-group">
+							<label class="control-label">Minutos de Voz</label>
+							<div class="controls">
+								<input type="text" name="voz" id="voz" wicket:id="voz" />
+							</div>
+						</div>
+
+
+						<div class="control-group">
+							<label class="control-label">Puntos</label>
+							<div class="controls">
+								<input type="text" name="puntos" id="puntos" wicket:id="puntos" />
+							</div>
+						</div>
+
+
+
+						<div class="control-group">
+							<div class="controls">
+								<button type="submit" class="btn">Guardar</button>
+							</div>
+						</div>
+					</fieldset>
 				</form>
 			</div>
 

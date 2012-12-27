@@ -1,7 +1,9 @@
 @CHARSET "UTF-8";
 
-.container{
-	
+.container {
 	width: 400px;
+}
 
+.feedbackPanel {
+	list-style: none;
 }

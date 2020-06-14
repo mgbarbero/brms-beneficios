@@ -11,10 +11,12 @@ import javax.ws.rs.Produces;
  * A JAX-RS interface.  An implementation of this interface must be provided.
  */
 @Path("/locations")
-public interface LocationsResource {
+public class LocationsResource {
   @GET
   @Produces("application/json")
   List<Location> generatedMethod1();
+  return new ArrayList();
+
 
   @POST
   @Produces("application/json")

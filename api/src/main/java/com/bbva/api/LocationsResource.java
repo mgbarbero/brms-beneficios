@@ -14,11 +14,12 @@ import javax.ws.rs.Produces;
 public class LocationsResource {
   @GET
   @Produces("application/json")
-  List<Location> generatedMethod1();
+  List<Location> generatedMethod1(){
   return new ArrayList();
-
+}
 
   @POST
   @Produces("application/json")
-  List<Location> generatedMethod2();
+  List<Location> generatedMethod2(){
+  return null;
 }

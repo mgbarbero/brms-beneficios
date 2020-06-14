@@ -23,3 +23,5 @@ public class LocationsResource {
   List<Location> generatedMethod2(){
   return null;
 }
+
+}
